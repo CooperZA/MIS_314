@@ -1,0 +1,57 @@
+/* 
+    Document   : style
+    Created on : Sep 23, 2010, 4:43:28 PM
+    Author     : csandvig
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body {
+    background: lightgray;
+    font-family: cursive,  sans-serif;
+    font-size: large;
+    /* IE workaround for centering bodyContainer */
+    text-align: center;
+}
+
+.container{
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid black ;
+    text-align: center;
+    /* set menu color on whole container and then overlay content div with a different color */
+    /* this avoids problems with menu not filling vertically */
+    background:  #9FC9BC;
+}
+
+.header, .footer {
+    background-color: ivory;
+    padding: 20px;
+}
+.footer {
+    clear: both;
+    border-top: 1px solid black;
+}
+
+.header {
+    border-bottom: 1px solid black;
+}
+
+.leftMenu {
+    float: left;
+    width: 220px;
+    padding: 30px;
+}
+
+.content {
+    float: right;
+    width:500px;
+    background: white;
+    padding:10px;
+}
+

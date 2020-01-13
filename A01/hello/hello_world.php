@@ -13,9 +13,17 @@ and open the template in the editor.
     <body>
         <div id="wrapper">
             <div class="container">
+                <div class="header">
+                    <h1>Hello World!</h1>
+                </div>
                 <?php
-                for($i; $i < 10; $i++){
-                echo "<h1> Hello World! </h1>";
+                for($i = 0; $i <= 10; $i++){
+
+                    $out = "Hello World!"
+
+                ?>
+                    <p><?php echo $out ?> Value of i is <?php echo $i ?></p>
+                <?php
                 }
                 ?>
             </div>
