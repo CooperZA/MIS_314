@@ -28,8 +28,8 @@
             <?php
             //Retrieve name from querystring. Check that parameter
             //is in querystring or may get "Undefined index" error
-            if (isset($_GET['fname'])) {
-                $fname = $_GET['fname'];
+            $fname = $_GET['fname'];
+            if (isset($fname)) {
                 echo "<h1> Hello $fname";
             }
             ?>
