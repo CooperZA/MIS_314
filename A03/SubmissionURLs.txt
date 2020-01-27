@@ -1,0 +1,12 @@
+Assignment 3 URLs
+
+1. ForLoop.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoop.php 
+
+2. ForLoopTable
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoopTable.php
+
+3. ForLoopNested
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoopNested.php
+
+4. ValidInput.php
