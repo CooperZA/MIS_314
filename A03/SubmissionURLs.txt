@@ -10,3 +10,6 @@ http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoopTable.php
 http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoopNested.php
 
 4. ValidInput.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ValidInput.php 
+
+5. SalesCalc.php
