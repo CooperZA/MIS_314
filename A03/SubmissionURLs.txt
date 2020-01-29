@@ -13,3 +13,6 @@ http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ForLoopNested.php
 http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/ValidInput.php 
 
 5. SalesCalc.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A03/SalesCalc.php
+
+6. FontPicker.php
