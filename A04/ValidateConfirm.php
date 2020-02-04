@@ -77,8 +77,9 @@
             Email: $email <br>
             First name: $fname <br>
             BirthDay: $bday <br>
-            Phone: $phone <br>
+            Age: $age <br>
             State: $state <br>
+            Zip: $zip <br>
             ";
         ?>
     </div>
