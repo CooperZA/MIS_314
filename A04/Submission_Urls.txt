@@ -1,0 +1,6 @@
+A04 Submission Urls
+1. Validate.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A04/Validate.php
+
+2. Order.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A04/Order01.php

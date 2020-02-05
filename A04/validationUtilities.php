@@ -6,8 +6,8 @@ function fIsValidLength($input, $minLength = 2, $maxLength = 30) {
    //returns true of false
    //trim empty spaces from beginning and end
    $input = trim($input);
-   $IsValid = (strlen($input) >= $minLength && strlen($input) <= $maxLength);
-   return $IsValid;
+   
+   return (strlen($input) >= $minLength && strlen($input) <= $maxLength);
 }
 
 //email address
