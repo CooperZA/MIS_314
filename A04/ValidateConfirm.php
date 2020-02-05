@@ -3,7 +3,7 @@
 
 <head>
     <title>Validation Confirm</title>
-    <link href="/sandvig/mis314/assignments/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 

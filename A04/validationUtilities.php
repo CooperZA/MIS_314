@@ -2,7 +2,7 @@
 // All validation functions return either true or false.
 // 
 // Validate string length.
-function fIsValidLength($input, $minLength, $maxLength) {
+function fIsValidLength($input, $minLength = 2, $maxLength = 30) {
    //returns true of false
    //trim empty spaces from beginning and end
    $input = trim($input);
@@ -87,6 +87,30 @@ function fIsValidZip($zip) {
 
    // check is numeric and str len == 5
    return (is_numeric($zip) and strlen($zip) == 5) ? true : false;
+}
+
+// validate car
+function fIsValidCar($model) {
+   // trim model
+   $model = trim($model);
+   
+   // cars array
+   $cars = array("Mustang", "Subaru", "Corvette");
+
+   // check value and return bool
+   return in_array($model, $cars);
+}
+
+// validate color 
+function fIsValidColor($c) {
+   //trim
+   $c = trim($c);
+
+   // colors array
+   $colors = array("Blue", "Red", "Yellow");
+
+   // check for allowed colors and return
+   return in_array($c, $colors);
 }
 ?>
 
