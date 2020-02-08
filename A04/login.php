@@ -1,5 +1,5 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 
 // upgrade to HTTPS
 if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
@@ -9,8 +9,26 @@ if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
     exit;
 }
 
+// Using post method so values will not be passed in the query string
+// pull in values from login form
+if ($_POST['postback']){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $postback = $_POST['postback'];
+}
+
+
 if ($password == 'guest' && strlen($username) > 0) {
+    // add flag to session array
+    $_SESSION['username'] = $username;
+
+    $_SESSION['password'] = $password;
+
+    $_SESSION['postback'] = true;
+    
+    // redirect to protected
     header("location: protected.php");
+    
     exit;
 }
 ?>
@@ -27,13 +45,13 @@ if ($password == 'guest' && strlen($username) > 0) {
         <form method="post" class="formLayout">
             <div class="formGroup">
                 <label>First name:</label>
-                <input type="text" name="username" value="<?php echo $uName; ?>" class="formElement" placeholder="first name" title="first name" required autofocus /><br>
+                <input type="text" name="username" value="<?php echo $username; ?>" class="formElement" placeholder="first name" title="first name" required autofocus /><br>
                 <span class="alert">
-                <?php
-                    if ($postback && strlen($username) < 1) {
+                    <?php
+                    if ($postback && strlen($username) < 1 ) {
                         echo "Please enter your name.";
                     }
-                ?>  
+                    ?>
                 </span>
             </div>
 
@@ -44,18 +62,18 @@ if ($password == 'guest' && strlen($username) > 0) {
                 <label></label>(Password is 'guest')<br>
                 <label></label>
                 <span class="alert">&nbsp;
-                <?php
-                // if ( $password != 'guest' && strlen($username) <= 0){
-                //     echo "invalid password";
-                // }
-                ?>
+                    <?php
+                    if ( $password != 'guest' && strlen($username) <= 0 && $postback){
+                        echo "invalid password";
+                    }
+                    ?>
                 </span>
             </div>
 
             <div class="formGroup">
-                <label> </label>
-                <input type="hidden" name="postback" value="<?php echo $postback; ?>">
-                <button type="submit">Login</button>
+                <label></label>
+                <input type="hidden" name="postback" value="true">
+                <button type="submit" name="submit" value="submit">Login</button>
             </div>
             <div class="formGroup">
                 <label></label>
@@ -71,11 +89,3 @@ if ($password == 'guest' && strlen($username) > 0) {
 </body>
 
 </html>
-
-<?php
-// Using post method so values will not be passed in the query string
-    // pull in values from login form
-    $uName = $_GET['username'];
-    $password = $_GET['password'];
-    $postback = true;
-?>

@@ -4,3 +4,6 @@ http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A04/Validate.php
 
 2. Order.php
 http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A04/Order01.php
+
+3. protected.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A04/login.php
