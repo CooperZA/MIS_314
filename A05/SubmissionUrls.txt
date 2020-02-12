@@ -7,5 +7,8 @@ https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/dvdActors.php
 3. DVDActorsTitles.php
 https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/movieTitlesActors.php 
 
-4. listingImproved.php
+4. DVDListing.php
+https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/dvdListing.php 
+
+5. listingImproved.php
 https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/listingImproved.php 
