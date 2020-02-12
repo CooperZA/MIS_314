@@ -67,6 +67,7 @@
             <th>ASIN</th>
             <th>Title</th>
             <th>Price</th>
+            <th>Cover</th>
             <th>Delete</th>
         </tr>
         <?php
@@ -79,6 +80,7 @@
                      <td>$asin</td>
                      <td>$row[title]</td>
                      <td>$row[price]</td>
+                     <td><img src='http://images.amazon.com/images/P/$asin.01.MZZZZZZZ.jpg'></td>
                      <td><a href='?delAsin=$asin'>delete</a></td>
                  </tr>";
         }
