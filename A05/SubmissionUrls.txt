@@ -1,0 +1,9 @@
+1. DVDTitles.php
+https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/mySql.php 
+
+2. DVDActors.php
+https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/dvdActors.php 
+
+3. DVDActorsTitles.php
+https://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A05/movieTitlesActors.php 
+
