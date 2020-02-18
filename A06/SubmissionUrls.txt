@@ -1,0 +1,17 @@
+1. ProductsByPrice.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/ProductsByPrice.php 
+
+2. ProductSearch.php
+http://york\town.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/ProductSearch.php 
+
+3.RandomProduct.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/RandomProduct.php 
+
+4. ListCategories.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/ListCategories.php
+
+5. CategoryItems.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/CategoryItems.php
+
+6. CRUD.php
+http://yorktown.cbe.wwu.edu/students/201/cooperz/MIS_314/A06/CRUD.php
