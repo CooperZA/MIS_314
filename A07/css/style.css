@@ -1,0 +1,31 @@
+/* Classes */
+.btn{}
+/* header */
+.logo{}
+.about{}
+.about-text{}
+
+/* menu */
+ul li{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+.menu{}
+.menu-search{}
+.menu-head{}
+.menu-container{}
+
+/* body */
+.container{}
+
+/* footer */
+.footer-search{}
+.footer-links{}
+
+/* about */
+.sub-head{}
+.page-title{}
