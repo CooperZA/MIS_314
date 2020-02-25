@@ -11,7 +11,7 @@
             <div class="menu-container">
                 <form action="">
                     <input type="text" name="search" autofocus>
-                    <input class="btn" type="submit" value="Search">
+                    <input class="btn btn-primary" type="submit" value="Search">
                 </form>
             </div>
         </div>

@@ -1,3 +1,8 @@
+<?php
+include('include/header.php');
+include('include/menu.php');
+?>
+
 <p class="page-title">Site Features</p>
 <ul>
     <li>Site created by Zach Cooper as a class project for <a href="http://yorktown.cbe.wwu.edu/sandvig/mis314/">MIS
@@ -91,3 +96,7 @@
     <li>Thanks to Amazon.com for the use of its
         icons, book images and book descriptions.</li>
 </ul>
+
+<?php
+include('include/footer.php');
+?>

@@ -11,13 +11,24 @@ $catName = fcleanString($link, $_GET['catName'], 50);
 
 // if block for search query (add page header message)
 if(isset($search)){
-    $sql = "SELECT title, ISBN, description,";
+    $sql = "SELECT bd.title, bd.ISBN, bd.description, ba.nameF, ba.nameL 
+    FROM bookdescriptions bd 
+    JOIN bookauthorsbooks bab ON bd.ISBN = bab.ISBN 
+    JOIN bookauthors ba ON bab.AuthorID = ba.AuthorID
+    WHERE title LIKE '%%'
+    OR description LIKE '%%'
+    OR nameF LIKE '%%';";
 }
 
 // id block for category query (add page header message)
 if(isset($catID) && isset($catName)){
-    $sql = "SELECT title, ISBN, description,
-    FROM bookdescriptions;";
+    $sql = "SELECT bd.title, bd.ISBN, bd.description, ba.nameF, ba.nameL 
+    FROM bookdescriptions bd 
+    JOIN bookcategoriesbookssbooks bcb ON bd.ISBN = bcb.ISBN 
+    JOIN bookcategories bc ON bcb.CategoryID = bc.CategoryID
+    JOIN bookauthorsbooks bab ON bd.ISBN = bab.ISBN 
+    JOIN bookauthors ba ON bab.AuthorID = ba.AuthorID
+    WHERE bc.CategoryID = $catID AND bc.CategoryName = '$catName';";
 
 }
 

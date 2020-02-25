@@ -3,7 +3,7 @@
             <div class="footer-search">
                 <form action="">
                     <input type="text" name="search">
-                    <input class="btn" type="submit" value="Search">
+                    <input class="btn btn-primary" type="submit" value="Search">
                 </form>
             </div>
             <div class="footerLinks">
