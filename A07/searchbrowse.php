@@ -46,7 +46,7 @@ include('include/menu.php');
         // retreive values from row array
         $ISBN = $row['ISBN'];
         $title = $row['title'];
-        $author = $row['author'];
+        $author = $row['nameF'] . " " . $row['nameL'];
         $desc = substr($row['description'], 0, 200) . "<a href='productpage.php?isbn=$ISBN'>more...</a>";
     ?>
         <div class="book-container">
