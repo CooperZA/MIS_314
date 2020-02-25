@@ -2,6 +2,9 @@
 .btn{}
 /* header */
 .logo{}
+.logo-img{
+    border-radius: 10px;
+}
 .about{}
 .about-text{}
 
