@@ -1,8 +1,15 @@
 <?php
+// page title
+$pageTitle = 'Home';
+
 // connect to DB
 include('util/databaseconnect.php');
 
 $link = fConnectToDatabase();
+
+// include page sections
+include('include/header.php');
+include('include/menu.php');
 
 // get three random books from the database
 $sql = "SELECT title, ISBN, description
@@ -12,8 +19,6 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
 
 // print_r(mysqli_fetch_array($result));
 
-include('include/header.php');
-include('include/menu.php');
 ?>
 <div class="col-md-9">
     <?php

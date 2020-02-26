@@ -1,4 +1,5 @@
 <?php
+$pageTitle = 'About';
 // connect to DB
 include('util/databaseconnect.php');
 

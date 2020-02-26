@@ -33,7 +33,7 @@
                     </div>
                     <!-- cart and view account go here -->
                     <div>
-                        <a href="include/about.php" class="about">
+                        <a href="about.php" class="about">
                             <i class="fas fa-info"></i>
                             <span class="about-text">About this Site</span>
                         </a>
