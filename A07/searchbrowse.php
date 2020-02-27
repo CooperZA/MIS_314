@@ -75,7 +75,7 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
         // retreive values from row array
         $ISBN = $row['ISBN'];
         $title = $row['title'];
-        // $author = $row['nameF'] . " " . $row['nameL'];
+        $author = $row['nameF'] . " " . $row['nameL'];
         $desc = substr($row['description'], 0, 200) . "<a href='productpage.php?isbn=$ISBN'>more...</a>";
     ?>
         <div class="book-container">
@@ -84,7 +84,7 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
             </a>
             <br>
             <span>
-                by <a href="searchbrowse.php?search=<?php echo $author; ?>"><?php echo fListAuthors($link, $ISBN) ?></a>
+                by <?php echo fListAuthors($link, $ISBN) ?>
             </span>
             <a href="productpage.php?isbn=<?php echo $ISBN; ?>" class="book-title">
                 <img src="http://yorktown.cbe.wwu.edu/sandvig/mis314/assignments/bookstore/bookimages/<?php echo $ISBN; ?>.01.THUMBZZZ.jpg" alt="<?php echo $title; ?>">
