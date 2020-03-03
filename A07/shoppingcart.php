@@ -75,6 +75,7 @@ include_once("include/menu.php");
                         FROM bookdescriptions
                         WHERE";
 
+    // append the isbns onto the sql statement
     foreach ($bookArray as $isbn => $qty) {
         $sql .= " isbn = '$isbn' OR";
     }
@@ -88,6 +89,8 @@ include_once("include/menu.php");
     // declare subtotal variable
     $subtotal = 0;
     $itemCount = 0;
+    $ship = 4;
+    $additionShip = 0.5;
 
     if (isset($bookArray)) {
         echo "<table id='cart'>\n" .
@@ -126,7 +129,7 @@ include_once("include/menu.php");
     }
 
     // calculate shipping
-    $shipping = 4 + (($itemCount - 1) * .50);
+    $shipping = $ship + (($itemCount - 1) * $additionShip);
 
     ?>
     </table>

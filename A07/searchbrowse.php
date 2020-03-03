@@ -37,13 +37,6 @@ if(!empty($search)){
 
 // id block for category query (add page header message)
 if(!empty($catID) && !empty($catName)){
-    // $sql = "SELECT bd.title, bd.ISBN, bd.description, ba.nameF, ba.nameL 
-    // FROM bookdescriptions bd 
-    // JOIN bookcategoriesbooks bcb ON bd.ISBN = bcb.ISBN 
-    // JOIN bookcategories bc ON bcb.CategoryID = bc.CategoryID
-    // JOIN bookauthorsbooks bab ON bd.ISBN = bab.ISBN 
-    // JOIN bookauthors ba ON bab.AuthorID = ba.AuthorID
-    // WHERE bc.CategoryID = $catID AND bc.CategoryName = '$catName';";
     $sql = "SELECT bd.title, bd.ISBN, bd.description, ba.nameF, ba.nameL 
     FROM bookdescriptions bd 
     JOIN bookcategoriesbooks bcb ON bd.ISBN = bcb.ISBN 
