@@ -25,6 +25,17 @@ ul li a{
 /* body */
 .container{}
 
+.formGroup{
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.form-checkout{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding: 2rem;
+}
+
 /* footer */
 .footer-search{}
 .footer-links{}
