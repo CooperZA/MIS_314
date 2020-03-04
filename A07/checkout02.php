@@ -6,9 +6,9 @@ $link = fConnectToDatabase();
 include_once('include/header.php');
 
 // query database for email
-$email = $_POST['email'];
+$email = strval(fCleanString($link, $_POST['email'], 50));
 
-$sql = "SELECT * FROM bookcustomers WHERE email = $email";
+$sql = "SELECT * FROM bookcustomers WHERE email = '$email'";
 
 $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving items for customer checkout02: ' . mysqli_error($link));
 
@@ -57,7 +57,7 @@ if (mysqli_num_rows($result) == 0) {
             </div>
             <div class="formGroup">
                 <input type="hidden" name="custID" value="<?php echo $row['custID']; ?>">
-                <input class="btn btn-primary pull-right" type="button">
+                <input class="btn btn-primary pull-right" type="submit" value="Place Order">
             </div>
         </form>
     </div>

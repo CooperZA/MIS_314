@@ -16,14 +16,14 @@ $totalBooks = $_COOKIE['BookCount'];
     <!-- display number of items in cart -->
     <h4>You have <?php echo $totalBooks; ?> items in your cart.</h4>
 
-    <form class="" action="POST" action="checkout02.php" autocomplete="on">
+    <form class="" method="POST" action="checkout02.php" autocomplete="on">
         <div class="cartIcons">
             <div class="formGroup">
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" autofocus="" required placeholder="Email">
             </div>
             <div class="formGroup">
-                <input type="text" class="btn btn-primary" alt="Proceed to checkout">
+                <input type="submit" class="btn btn-primary" alt="Proceed to checkout" value="Continue">
             </div>
         </div>
     </form>
