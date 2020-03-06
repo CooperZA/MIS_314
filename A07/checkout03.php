@@ -41,7 +41,10 @@ if(fIsValidInputArray($array)){
     // echo back btn
     echo "Oh no something went wrong!";
     echo "<button class='btn btn-primary' onclick='goBack()'>Go Back</button>";
+    exit();
 }
+
+
 
 
 ?>
