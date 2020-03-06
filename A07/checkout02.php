@@ -1,4 +1,5 @@
 <?php
+include('util/encryption.php');
 include('util/databaseconnect.php');
 $link = fConnectToDatabase();
 
@@ -17,9 +18,12 @@ if (mysqli_num_rows($result) == 0) {
 } else {
     $custStatus = "Returning Customer - Please confirm your mailing and e-mail addresses.";
     $row = mysqli_fetch_array($result);
+    // TODO: display order history only if the customer is a returning customer
 }
 
-// while($row = mysqli_fetch_array($result)){
+// TODO: encrypt the customer id
+
+
 ?>
 
 <div class="col-md-12">
@@ -57,6 +61,7 @@ if (mysqli_num_rows($result) == 0) {
             </div>
             <div class="formGroup">
                 <input type="hidden" name="custID" value="<?php echo $row['custID']; ?>">
+                <input type="hidden" name="custIDe" value="<?php echo encrypt($row['custID']); ?>">
                 <input class="btn btn-primary pull-right" type="submit" value="Place Order">
             </div>
         </form>
@@ -64,7 +69,6 @@ if (mysqli_num_rows($result) == 0) {
 </div>
 
 <?php 
-// }
 
 include_once('include/footer.php'); 
 ?>
