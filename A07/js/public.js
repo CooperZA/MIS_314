@@ -1,4 +1,4 @@
-$()
+// $()
 
 // back btn when validation fails
 function goBack() {
