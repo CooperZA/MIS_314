@@ -2,7 +2,7 @@
 <!-- end main content row -->
 <div class="row">
     <div class="col-md-12">
-        <footer>
+        <footer class="text-center">
             <div class="footer-search">
                 <form action="searchbrowse.php">
                     <input type="text" name="search">

@@ -94,9 +94,8 @@ include('include/menu.php');
         </li>
         <li><span class="sub-head">Enhancements</b></span>
             <ul>
-                <li>The sample site does not have any enhancements. See
-                    <a href="https://yorktown.cbe.wwu.edu/students/191/csandvig/music/about" target="_blank">
-                        XML Music</a> for enhancement examples.</li>
+                <li>Shortening descriptions at 200 characters on the nearest space.</li>\
+                
             </ul>
         </li>
         <li>Thanks to Amazon.com for the use of its

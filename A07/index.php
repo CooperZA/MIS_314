@@ -27,8 +27,7 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
         // retreive values from row array
         $ISBN = $row['ISBN'];
         $title = $row['title'];
-        // strrpos starts from end of string not beginning
-        $desc = substr($row['description'], 0, strrpos($row['description'], " ", 200)) . "<a href='productpage.php?isbn=$ISBN'>more...</a>";
+        $desc = substr($row['description'], 0, strrpos(substr($row['description'], 0, 200), " ")) . "<a href='productpage.php?isbn=$ISBN'> more...</a>";
     ?>
         <div class="book-container">
             <a href="productpage.php?isbn=<?php echo $ISBN; ?>" class="book-title">

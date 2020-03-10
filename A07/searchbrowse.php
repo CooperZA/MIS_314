@@ -69,7 +69,7 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
         $ISBN = $row['ISBN'];
         $title = $row['title'];
         $author = $row['nameF'] . " " . $row['nameL'];
-        $desc = substr($row['description'], 0, 200) . "<a href='productpage.php?isbn=$ISBN'>more...</a>";
+        $desc = substr($row['description'], 0, strrpos(substr($row['description'], 0, 200), " ")) . "<a href='productpage.php?isbn=$ISBN'> more...</a>";
     ?>
         <div class="book-container">
             <a href="productpage.php?isbn=<?php echo $ISBN; ?>" class="book-title">
