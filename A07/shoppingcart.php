@@ -54,10 +54,6 @@ if (isset($bookArray)) {
 include_once("include/header.php");
 include_once("include/menu.php");
 ?>
-<!-- 
-<div id="leftColumn">
-    <?php //include "../includes/menu.php" ?>
-</div> -->
 <div id="pageContent">
     <p class="centeredText">
         <?php

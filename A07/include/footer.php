@@ -2,22 +2,24 @@
 <!-- end main content row -->
 <div class="row">
     <div class="col-md-12">
-        <footer class="text-center">
-            <div class="footer-search">
-                <form action="searchbrowse.php">
-                    <input type="text" name="search">
-                    <input class="btn btn-primary" type="submit" value="Search">
-                </form>
-            </div>
-            <div class="footerLinks">
-                <a href="index.php">Home</a>
-                <a href="about.php">About this Site</a>
-            </div>
-            <div class="created-by">
-                Copyright <i class="far fa-copyright"></i>
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> Zach Cooper
+        <footer class="text-center border rounded ">
+            <div class="p-3">
+                <div class="footer-search">
+                    <form action="searchbrowse.php">
+                        <input type="text" name="search">
+                        <input class="btn btn-primary" type="submit" value="Search">
+                    </form>
+                </div>
+                <div class="footerLinks">
+                    <a href="index.php" class="m-3">Home</a>
+                    <a href="about.php" class="m-3">About this Site</a>
+                </div>
+                <div class="created-by">
+                    Copyright <i class="far fa-copyright"></i>
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> Zach Cooper
+                </div>
             </div>
         </footer>
     </div>

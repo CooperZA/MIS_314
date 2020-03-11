@@ -60,7 +60,7 @@ if (mysqli_num_rows($result) == 0) {
                 <input type="text" name="zip" value="<?php echo $row['zip']; ?>" required placeholder="Zip" title="zip" maxlength="5" pattern="[0-9]{5}">
             </div>
             <div class="formGroup">
-                <input type="hidden" name="custID" value="<?php echo $row['custID']; ?>">
+                <!-- <input type="hidden" name="custID" value="<?php //echo $row['custID']; ?>"> -->
                 <input type="hidden" name="custIDe" value="<?php echo encrypt($row['custID']); ?>">
                 <input class="btn btn-primary pull-right" type="submit" value="Place Order">
             </div>

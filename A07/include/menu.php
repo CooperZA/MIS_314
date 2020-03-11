@@ -6,18 +6,18 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error in menu.php: ' . my
 ?>
 <div class="row">
     <div class="col-md-3">
-        <div class="menu">
+        <div class="menu border rounded p-3">
             <div class="menu-search">
-                <div class="menu-head">Search</div>
-                <div class="menu-container">
+                <div class="menu-head font-weight-bold border-bottom mb-1">Search</div>
+                <div class="menu-container mb-3">
                     <form action="searchbrowse.php">
                         <input type="text" name="search" autofocus>
-                        <input class="btn btn-primary" type="submit" value="Search">
+                        <input class="btn btn-primary mt-2" type="submit" value="Search">
                     </form>
                 </div>
             </div>
             <nav>
-                <div class="menu-head">Browse</div>
+                <div class="menu-head font-weight-bold border-bottom">Browse</div>
                 <ul>
                     <!-- while loop -->
                     <?php

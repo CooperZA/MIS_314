@@ -25,19 +25,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <header>
-                    <div class="logo">
-                        <a href="index.php">
-                            <img class="img-responsive logo-img" src="assets/ebook-store-logo.jpeg" alt="Logo Image">
-                        </a>
-                    </div>
-                    <!-- cart and view account go here -->
-                    <div>
-                        <a href="about.php" class="about">
-                            <i class="fas fa-info"></i>
-                            <span class="about-text">About this Site</span>
-                        </a>
-                    </div>
+                <header class="m-3">
+                    <span class="row">
+                        <div class="logo col-md-8">
+                            <a href="index.php">
+                                <img class="img-responsive logo-img" src="assets/ebook-store-logo.jpeg" alt="Logo Image">
+                            </a>
+                        </div>
+                        <!-- cart and view account go here -->
+                        <div class="col-md-2">
+                            <a href="checkout01.php" class="float-right">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-text">Cart</span>
+                            </a>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="about.php" class="float-right">
+                                <i class="fas fa-info"></i>
+                                <span class="about-text">About this Site</span>
+                            </a>
+                        </div>
+                    </span>
                 </header>
             </div>
         </div>
