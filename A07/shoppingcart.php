@@ -65,8 +65,7 @@ include_once("include/menu.php");
     </p>
 
     <?php
-    //To do:
-    // 1. Build sql statement containing ISBNs. Use foreach loop.
+    // Build sql statement containing ISBNs. Use foreach loop.
     $sql = "SELECT isbn, title, price 
                         FROM bookdescriptions
                         WHERE";

@@ -37,7 +37,7 @@ if(!empty($search)){
 
 // id block for category query (add page header message)
 if(!empty($catID) && !empty($catName)){
-    $sql = "SELECT bd.title, bd.ISBN, bd.description, ba.nameF, ba.nameL 
+    $sql = "SELECT bd.title, bd.ISBN, bd.description, Concat(ba.nameF, ' ', ba.nameL) as authorName 
     FROM bookdescriptions bd 
     JOIN bookcategoriesbooks bcb ON bd.ISBN = bcb.ISBN 
     JOIN bookcategories bc ON bcb.CategoryID = bc.CategoryID
@@ -68,7 +68,6 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
         // retreive values from row array
         $ISBN = $row['ISBN'];
         $title = $row['title'];
-        $author = $row['nameF'] . " " . $row['nameL'];
         $desc = substr($row['description'], 0, strrpos(substr($row['description'], 0, 200), " ")) . "<a href='productpage.php?isbn=$ISBN'> more...</a>";
     ?>
         <div class="book-container">
