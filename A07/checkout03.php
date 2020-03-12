@@ -101,10 +101,13 @@ echo $bookArray;
 // dispose of cookie
 setcookie($cookieName, null, time() - 60000);
 
+// time var
+$currTime = time();
+
 // check if there are books in the book array
 if (count($bookArray) > 0) {
     $orderSql = "INSERT INTO bookorders (custID, orderdate) 
-                VALUES ($userID, 'time()')";
+                VALUES ($userID, '$currTime')";
 
     // execute query
     mysqli_query($link, $orderSql) or die('sql error when inserting into bookorders in checkout03: ' . mysqli_error($link));
@@ -178,7 +181,7 @@ if (isset($bookArray)) {
                             <th>Total</th>\n
                         </tr>";
 
-        echo $emailBody;
+        // echo $emailBody;
 
     while ($row = mysqli_fetch_array($result)) {
         // pull in row values
@@ -200,7 +203,7 @@ if (isset($bookArray)) {
                     <td class='bookPrice text-center'>$price</td>
                     <td class='bookPrice'>$itemTotal</td>
                 </tr>\n";
-        echo $emailBody
+        // echo $emailBody;
     }
 }
 
