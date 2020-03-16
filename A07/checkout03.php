@@ -78,7 +78,7 @@ if (strlen(strval($userID)) == 0) {
             SET email = '$userEmail', fname = '$userFname', lname = '$userLname', street = '$userStreet', city = '$userCity', state = '$userState', zip = '$userZip'
             WHERE custID = $userID";
 
-    echo $sql;
+    // echo $sql;
 
     // execute sql
     mysqli_query($link, $sql) or die('sql error when updating the returning customer in checkout03: ' . mysqli_error($link));
@@ -95,8 +95,6 @@ $bookArray = [];
 if (isset($_COOKIE[$cookieName])) {
     $bookArray = unserialize($_COOKIE[$cookieName]);
 }
-
-echo $bookArray;
 
 // dispose of cookie
 setcookie($cookieName, null, time() - 60000);
@@ -128,7 +126,6 @@ foreach ($bookArray as $isbn => $qty) {
     mysqli_query($link, $bookItemsSql) or die('sql error when inserting order items into bookorderitems: ' . mysqli_error($link));
 }
 
-// TODO: Display Order confirmation information
 // get book information from database
 $orderConfirmationSql = "SELECT isbn, title, price 
                         FROM bookdescriptions
@@ -142,7 +139,7 @@ foreach ($bookArray as $isbn => $qty) {
 // remove last 2 indexes from $sql string
 $orderConfirmationSql = substr($orderConfirmationSql, 0, strlen($orderConfirmationSql) - 2);
 
-// 2. Execute sql and display book titles, prices, qty, etc.
+// Execute sql and display book titles, prices, qty, etc.
 $result = mysqli_query($link, $orderConfirmationSql) or die('SQL syntax error while retriving items for order confirmation: ' . mysqli_error($link));
 
 // declare subtotal variable
@@ -151,96 +148,107 @@ $itemCount = 0;
 $ship = 4;
 $additionShip = 0.5;
 
-if (isset($bookArray)) {
-    // variable for body of email
-    $emailBody;
+if(count($bookArray) > 0){
+    if (isset($bookArray)) {
+        // variable for body of email
+        $emailBody;
 
-    // echo order number and user information, append to email body
-    $emailBody .= "<table id='cart'>\n" .
-        "<tbody>
-        <tr>
-            <td class='font-weight-bold'>Order Number:</td>\n
-            <td>$orderID</td>\n
-        </tr>
-        <tr>
-            <td class='font-weight-bold'>Shipping Address</td>
-            <td>$userFname $userLname <br>
-                $userStreet <br>
-                $userCity, $userState $userZip<br>
-            </td>
-        </tr>
-        <tr>
-            <td class='font-weight-bold'>Books Shipped:</td>
-            <td>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Title</th>\n
-                            <th>Qty</th>\n
-                            <th>Price</th>\n
-                            <th>Total</th>\n
-                        </tr>";
+        // echo order number and user information, append to email body
+        $emailBody .= "<table id='cart'>\n" .
+            "<tbody>
+            <tr>
+                <td class='font-weight-bold'>Order Number:</td>\n
+                <td>$orderID</td>\n
+            </tr>
+            <tr>
+                <td class='font-weight-bold'>Shipping Address</td>
+                <td>$userFname $userLname <br>
+                    $userStreet <br>
+                    $userCity, $userState $userZip<br>
+                </td>
+            </tr>
+            <tr>
+                <td class='font-weight-bold'>Books Shipped:</td>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Title</th>\n
+                                <th>Qty</th>\n
+                                <th>Price</th>\n
+                                <th>Total</th>\n
+                            </tr>";
 
-        // echo $emailBody;
+            // echo $emailBody;
 
-    while ($row = mysqli_fetch_array($result)) {
-        // pull in row values
-        $isbn = $row['isbn'];
-        $title = $row['title'];
-        $price = $row['price'];
-        $qty = $bookArray[$isbn];
-        $itemTotal = $price * $qty;
-        $subtotal += $itemTotal;
-        $itemCount++;
+        while ($row = mysqli_fetch_array($result)) {
+            // pull in row values
+            $isbn = $row['isbn'];
+            $title = $row['title'];
+            $price = $row['price'];
+            $qty = $bookArray[$isbn];
+            $itemTotal = $price * $qty;
+            $subtotal += $itemTotal;
+            $itemCount++;
 
-        // append each record to email body
-        $emailBody .= "
-                <tr> \n
-                    <td>
-                        <a class='booktitle' href='ProductPage.php?isbn=$isbn'>$title</a>
-                    </td>
-                    <td>$qty</td>
-                    <td class='bookPrice text-center'>$price</td>
-                    <td class='bookPrice'>$itemTotal</td>
-                </tr>\n";
-        // echo $emailBody;
+            // append each record to email body
+            $emailBody .= "
+                    <tr> \n
+                        <td>
+                            <a class='booktitle' href='ProductPage.php?isbn=$isbn'>$title</a>
+                        </td>
+                        <td>$qty</td>
+                        <td class='bookPrice text-center'>$price</td>
+                        <td class='bookPrice'>$itemTotal</td>
+                    </tr>\n";
+            // echo $emailBody;
+        }
     }
+
+    // calculate shipping
+    $shipping = $ship + (($itemCount - 1) * $additionShip);
+
+    $emailBody .= "</tbody></table></td></tr></tbody></table>
+    <table class='cartTotal'>
+        <tr>
+            <td> Sub-Total:</td>
+            <td align='right'>" . '$' . number_format($subtotal, 2) ."</td>
+        </tr>
+        <tr>
+            <td> Shipping:*</td>
+            <td align='right'>" . "$" . number_format($shipping, 2) . "</td>
+        </tr>
+        <tr>
+            <td><b>Total:</b></td>
+            <td align='right'><b>" . "$" . number_format(($subtotal + $shipping), 2) . "</b></td>
+        </tr>
+    </table>";
+
+    echo $emailBody;
+
+?>
+    <span class='text-center m-2'>
+        <a href='index.php' class='btn btn-primary'>Continue Shopping</a>
+    </span>
+    
+    <!-- order history -->
+    <form action="orderHistory.php" method="POST" class="m-2">
+        <span class="formGroup">
+            <input type="hidden" name="custIDe" value="<?php echo encrypt($userID); ?>">
+            <input class="btn btn-primary text-center" type="submit" value="Order History">
+        </span>
+    </form>
+<?php
+    
+}else{
+
+    echo "<h2>No items in shopping cart.</h2> <br>
+        <h3>Go add some</h3> <br>
+        <span class='text-center m-2'>
+        <a href='index.php' class='btn btn-primary'>Continue Shopping</a>
+    </span>";
 }
 
-// calculate shipping
-$shipping = $ship + (($itemCount - 1) * $additionShip);
-
-$emailBody .= "</tbody></table></td></tr></tbody></table>
-<table class='cartTotal'>
-    <tr>
-        <td> Sub-Total:</td>
-        <td align='right'>" . '$' . number_format($subtotal, 2) ."</td>
-    </tr>
-    <tr>
-        <td> Shipping:*</td>
-        <td align='right'>" . "$" . number_format($shipping, 2) . "</td>
-    </tr>
-    <tr>
-        <td><b>Total:</b></td>
-        <td align='right'><b>" . "$" . number_format(($subtotal + $shipping), 2) . "</b></td>
-    </tr>
-</table>";
-
-echo $emailBody;
-?>
-<div class='text-center'>
-    <a href='index.php' class='btn btn-primary'>Continue Shopping</a>
-</div>
-
-<!-- order history -->
-<form action="orderHistory.php" method="POST">
-    <div class="formGroup">
-        <input type="hidden" name="custIDe" value="<?php echo encrypt($userID); ?>">
-        <input class="btn btn-primary text-center" type="submit" value="Order History">
-    </div>
-</form>
-
-<?php
 // TODO: Send email confirmation
 // send email
 MailHelper::GenerateEmail($userEmail, $emailBody);

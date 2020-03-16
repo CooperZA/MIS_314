@@ -9,7 +9,7 @@ include('include/header.php');
 include('include/menu.php');
 ?>
 <div class="col-md-9">
-    <p class="page-title">Site Features</p>
+    <h2 class="page-title">Site Features</h2>
     <ul>
         <li>Site created by Zach Cooper as a class project for <a href="http://yorktown.cbe.wwu.edu/sandvig/mis314/">MIS
                 314</a> at Western Washington University. </li>
@@ -34,7 +34,7 @@ include('include/menu.php');
                 </li>
             </ul>
         </li>
-        <li><span class="sub-head">Home page</span>
+        <li><h3 class="sub-head">Home page</h3>
             <ul>
                 <li>Selects three random items from from the
                     database using a SQL statement.</li>
@@ -43,7 +43,7 @@ include('include/menu.php');
                 <li>Truncates book descriptions at 250 characters.</li>
             </ul>
         </li>
-        <li><span class="sub-head">Search page</span>
+        <li><h3 class="sub-head">Search page</h3>
             <ul>
                 <li>Cleans user entered data to protect against SQL Injection attacks and cross-site scripting. </li>
                 <li>Searches book title, description, author and
@@ -53,13 +53,13 @@ include('include/menu.php');
                 <li>Responds gracefully to searches that return no matches.</li>
             </ul>
         </li>
-        <li><span class="sub-head">Shopping cart page</span>
+        <li><h3 class="sub-head">Shopping cart page</h3>
             <ul>
                 <li>Uses a cookie to store the ISBNs of items in the
                     cart.</li>
             </ul>
         </li>
-        <li><span class="sub-head">Checkout pages</span>
+        <li><h3 class="sub-head">Checkout pages</h3>
             <ul>
                 <li>Searches the database for email addresses of existing
                     customer accounts and writes their shipping information in
@@ -68,7 +68,7 @@ include('include/menu.php');
                 </li>
             </ul>
         </li>
-        <li><span class="sub-head">Order Confirmation Page</span>
+        <li><h3 class="sub-head">Order Confirmation Page</h3>
             <ul>
                 <li>Checks for shopping cart and prompts user if cart is
                     empty.</li>
@@ -84,7 +84,7 @@ include('include/menu.php');
                 <li>The shopping cart is emptied by setting ItemCount to zero in the ShoppingCart cookie.</li>
             </ul>
         </li>
-        <li><span class="sub-head">Order History Page</span>
+        <li><h3 class="sub-head">Order History Page</h3>
             <ul>
                 <li>Searches the database for all orders associated with
                     e-mail address</li>
@@ -92,14 +92,17 @@ include('include/menu.php');
                     try again.</li>
             </ul>
         </li>
-        <li><span class="sub-head">Enhancements</b></span>
+        <li><h3 class="sub-head">Enhancements</b></h3>
             <ul>
-                <li>Shortening descriptions at 200 characters on the nearest space.</li>\
-                
+                <li>Shortening descriptions at 200 characters on the nearest space.</li>
+                <li>Added lightbox for images on the product page using the lightbox2 javascript library, downloaded using npm.</li>
+                <li>Home page and serachbrowse descriptions truncated at the space nearest to 200 characters from the beginning of the description.</li>
             </ul>
         </li>
-        <li>Thanks to Amazon.com for the use of its
-            icons, book images and book descriptions.</li>
+        <li>
+            <h5>Thanks to Amazon.com for the use of its
+            icons, book images and book descriptions.</h5>
+        </li>
     </ul>
 </div>
 <?php

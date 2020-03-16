@@ -86,14 +86,15 @@ include_once("include/menu.php");
     $itemCount = 0;
     $ship = 4;
     $additionShip = 0.5;
+    $itemCount = 0;
 
     if (isset($bookArray)) {
         echo "<table id='cart'>\n" .
             "<tr>\n
                 <th>Title</th>\n
-                <th>Qty</th>\n
-                <th>Price</th>\n
-                <th>Total</th>\n
+                <th class='m-3'>Qty</th>\n
+                <th class='m-3'>Price</th>\n
+                <th class='m-3'>Total</th>\n
                 <th></th>
             </tr>\n";
 
@@ -105,14 +106,14 @@ include_once("include/menu.php");
             $qty = $bookArray[$isbn];
             $itemTotal = $price * $qty;
             $subtotal += $itemTotal;
-            $itemCount++;
+            $itemCount += $qty;
 
             echo "
                 <tr> \n
                     <td>
                         <a class='booktitle' href='ProductPage.php?isbn=$isbn'>$title</a>
                     </td>
-                    <td>$qty</td>
+                    <td class='m-2'>$qty</td>
                     <td class='bookPrice'>$price</td>
                     <td class='bookPrice'>$itemTotal</td>
                     <td style='text-align: center;'>

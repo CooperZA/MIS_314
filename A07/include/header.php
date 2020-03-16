@@ -11,6 +11,8 @@
     <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- lightbox -->
+    <link rel="stylesheet" href="node_modules\lightbox2\dist\css\lightbox.css">
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- favicon -->

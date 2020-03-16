@@ -32,6 +32,8 @@
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <!-- bootstrap -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- lightbox -->
+<script src="node_modules\lightbox2\dist\js\lightbox.js"></script>
 <!-- custom js -->
 <script src="js/public.js"></script>
 </html>

@@ -44,7 +44,7 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
 
             <div class="authors">by <?php echo fListAuthors($link, $ISBN) ?></div>
 
-            <a href="http://yorktown.cbe.wwu.edu/sandvig/mis314/assignments/bookstore/bookimages/<?php echo $ISBN; ?>.01.LZZZZZZZ.jpg" class="book-title">
+            <a href="http://yorktown.cbe.wwu.edu/sandvig/mis314/assignments/bookstore/bookimages/<?php echo $ISBN; ?>.01.LZZZZZZZ.jpg" data-lightbox="<?php echo $title; ?>" data-title="<?php echo $title; ?>" class="book-title">
                 <img src="http://yorktown.cbe.wwu.edu/sandvig/mis314/assignments/bookstore/bookimages/<?php echo $ISBN; ?>.01.MZZZZZZZ.jpg" alt="<?php echo $title; ?>">
             </a>
             <br>
