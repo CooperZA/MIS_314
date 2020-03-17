@@ -94,9 +94,11 @@ include('include/menu.php');
         </li>
         <li><h3 class="sub-head">Enhancements</b></h3>
             <ul>
-                <li>Shortening descriptions at 200 characters on the nearest space.</li>
+                <li>When a search or browse returns only one item, display the productpage.php rather than the searchbrowse.php page.</li>
                 <li>Added lightbox for images on the product page using the lightbox2 javascript library, downloaded using npm.</li>
                 <li>Home page and serachbrowse descriptions truncated at the space nearest to 200 characters from the beginning of the description.</li>
+                <li>Categories in menu display the number of items in the category. Achieved through sql SELECT statement.</li>
+                <li>Site optimized for mobile. Using Bootstrap CSS Framework.</li>
             </ul>
         </li>
         <li>

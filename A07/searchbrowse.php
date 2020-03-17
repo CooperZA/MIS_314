@@ -52,6 +52,14 @@ $result = mysqli_query($link, $sql) or die('SQL syntax error while retriving ite
 
 // print_r(mysqli_fetch_array($result));
 
+// check if there is only one result in the returned array, if so redirect to product page
+if (mysqli_num_rows($result) == 1) {
+    // get isbn from result 
+    $row = mysqli_fetch_array($result);
+
+    header("location:productpage.php?isbn=$row[ISBN]");
+}
+
 ?>
 <div class="col-md-9">
     <?php

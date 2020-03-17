@@ -104,7 +104,7 @@ include_once("include/menu.php");
             $title = $row['title'];
             $price = $row['price'];
             $qty = $bookArray[$isbn];
-            $itemTotal = $price * $qty;
+            $itemTotal = 0.8 * ($price * $qty);
             $subtotal += $itemTotal;
             $itemCount += $qty;
 

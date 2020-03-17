@@ -14,19 +14,6 @@ $referrer = $_SERVER['HTTP_REFERER'];
 
 if (stripos($referrer, 'checkout02.php') == false) header("location:checkout01.php");
 
-// validate user inputs from checkout02
-/* 
-    values from checkout02
-    - email
-    - fname
-    - lname
-    - street
-    - city
-    - state
-    - zip
-    - custID
-*/
-
 // get values from post
 $userEmail = fCleanString($link, $_POST['email'], 50);
 $userFname = fCleanString($link, $_POST['fname'], 20);
@@ -187,7 +174,7 @@ if(count($bookArray) > 0){
             $title = $row['title'];
             $price = $row['price'];
             $qty = $bookArray[$isbn];
-            $itemTotal = $price * $qty;
+            $itemTotal = 0.8 * ($price * $qty);
             $subtotal += $itemTotal;
             $itemCount++;
 
